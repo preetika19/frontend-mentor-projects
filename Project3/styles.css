@@ -98,6 +98,10 @@
   .mobile {
   	display: none;
   }
+
+  .img-desktop {
+  	width: 100%;
+  }
 }
 
 
