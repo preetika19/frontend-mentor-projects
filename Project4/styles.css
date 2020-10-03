@@ -1,0 +1,134 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; 
+	font-size: 32px;
+	font-family: 'Inter', sans-serif;
+}
+
+.flex-container {
+	display: flex;
+}
+
+.img-section {
+	background-image: url(images/pattern-bg.svg);
+	padding: 50px;
+	position: relative;
+}
+
+.img-person {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn {
+	margin-top: -35px;
+	padding: 20px;
+	background-color: white;
+	border-radius: 30px;
+	position: absolute;
+	
+}
+
+.btn > a {
+	margin: 0;
+	padding: 20px;
+}
+
+.content-section > p {
+	font-size: .7em;
+	font-weight: 300;
+	padding: 50px;
+	padding-bottom: 200px;
+	color: hsl(240, 38%, 20%);
+}
+
+p > span {
+	color: hsl(240, 38%, 20%);
+	font-weight: 700;
+	font-size: 1em;
+}
+
+.job-name {
+	color: hsl(240, 18%, 77%);
+	font-size: 0.9em;
+	font-weight: 500;
+}
+
+#slide2 {
+	display: none;
+}
+
+
+/* Desktop View */
+@media (min-width: 998px) {
+	.flex-container {
+		flex-direction: row-reverse;
+		text-align: left;
+		padding: 50px 100px 100px 0px;
+		background: url(images/pattern-curve.svg) no-repeat left bottom;
+	}
+
+	.content-section {
+		background: url(images/pattern-quotes.svg) no-repeat 200px top;	
+	}
+
+	.content-section {
+		margin-top: 150px;
+		position: relative;
+		left: 70px;
+	}
+
+	.content-section > p {
+		padding-right: 0px;
+		font-size: 1em;
+	}
+
+	p > span {
+		font-size: 0.7em;
+	}
+
+	.job-name {
+		font-size: 0.6em;
+	}
+
+	.img-section {
+		padding-left: 0px;
+	}
+
+	.btn {
+		left: 25%;
+		transform: translate(-50%);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+}
+
+/* Mobile View */
+@media (max-width: 997px) {
+	.flex-container {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.content-section {
+	background: url(images/pattern-quotes.svg) no-repeat center top, 
+				url(images/pattern-curve.svg) no-repeat left bottom;	
+	}
+
+	.img-person {
+		max-width: 100%;
+	}
+
+	.content-section {
+		margin: 30px 0px;
+	}
+
+	.btn {
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	.job-name {
+		display: block;
+	}
+}

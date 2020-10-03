@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
+  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+</head>
+<body>
+  <div class="flex-container" id="slide1">
+    <div class="img-section">
+      <img class="img-person" src="images/image-tanya.jpg" alt="Tanya-img">
+      <div class="btn">
+        <a><img src="images/icon-prev.svg" alt="Prev"></a>
+        <a onclick="slide_john()"><img src="images/icon-next.svg" alt="Next"></a>
+      </div>
+    </div>
+    <div class="content-section">
+      <p>  “ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ” <br><br>
+      <span>Tanya Sinclair</span>
+      <span class="job-name">UX Engineer </span></p>
+    </div>
+  </div>
+  <div class="flex-container" id="slide2">
+    <div class="img-section">
+      <img class="img-person" src="images/image-john.jpg" alt="John-img">
+      <div class="btn">
+        <a onclick="slide_tanya()"><img src="images/icon-prev.svg" alt="Prev"></a>
+        <a><img src="images/icon-next.svg" alt="Next"></a>
+      </div>
+    </div>
+    <div class="content-section">
+      <p>  “ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”
+      <br><br>
+      <span>John Tarkpor</span>
+      <span class="job-name">Junior Front-end Developer</span></p>
+    </div>  
+  </div>
+</body>
+</html>
+
+<script>
+  var s1 = document.getElementById("slide1");
+  var s2 = document.getElementById("slide2");
+
+  function slide_john () {
+    s1.style.display = "none";
+    s2.style.display = "flex";
+  }
+
+  function slide_tanya () {
+    s1.style.display = "flex";
+    s2.style.display = "none";
+  }
+</script>
+
+<!--
+<div>
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="https://github.com/preetika19">Preetika Lakshmanan</a>.
+</div> 
+-->
