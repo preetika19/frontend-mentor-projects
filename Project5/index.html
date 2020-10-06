@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+</head>
+<body>
+  <div class="flex-container">
+    <div class="intro-section">
+      <h1>Learn to code by watching others</h1>
+      <h2>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</h2>
+    </div>
+    <div class="form-section">
+      <div class="free-try">
+        <p><b>Try it free 7 days</b> then $20/mo. thereafter</p>
+      </div>
+      <form class="form-details" onsubmit="return false">
+        <div id="input-container">
+          <input type="text" name="first_name" id="first_name" placeholder="First Name">
+          <img src="images/icon-error.svg" alt="Error Icon" id="error-icon-fn">
+          <span id="fn">First name cannot be empty</span>
+        </div>
+
+        <div id="input-container">
+          <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+          <img src="images/icon-error.svg" alt="Error Icon" id="error-icon-ln">
+          <span id="ln">Last name cannot be empty</span>
+        </div>
+
+        <div id="input-container">
+          <input type="Email" name="email" id="email" placeholder="Email Address">
+          <img src="images/icon-error.svg" alt="Error Icon" id="error-icon-email">
+          <span id="email-msg">Looks like this is not an email</span>
+        </div>
+
+        <div id="input-container">
+          <input type="Password" name="password" id="password" placeholder="Password">
+          <img src="images/icon-error.svg" alt="Error Icon" id="error-icon-pass">
+          <span id="pass">Password cannot be empty</span>
+        </div>
+        
+        <button type="submit" onclick="check()">Claim Your Free Trial</button>
+        <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  function check () {
+    var first_name = document.getElementById("first_name").value;
+    var last_name = document.getElementById("last_name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    var image1 = document.getElementById("error-icon-fn");
+    var string1 = document.getElementById('fn');
+
+    var image2 = document.getElementById("error-icon-ln");
+    var string2 = document.getElementById('ln');
+
+    var image3 = document.getElementById("error-icon-pass");
+    var string3 = document.getElementById('pass');
+
+    var image4 = document.getElementById("error-icon-email");
+    var string4 = document.getElementById('email-msg');
+
+    if (!first_name ) {
+      image1.style.display = "block";
+      string1.style.display = "block";
+    }
+    else {
+      image1.style.display = "none";
+      string1.style.display = "none";
+    }
+    if (!last_name) {
+      image2.style.display = "block";
+      string2.style.display = "block";
+    }
+    else {
+      image2.style.display = "none";
+      string2.style.display = "none";
+    }
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      image4.style.display = "none";
+      string4.style.display = "none";
+    }
+    else {
+      image4.style.display = "block";
+      string4.style.display = "block"; 
+    }
+    if (!password) {
+      image3.style.display = "block";
+      string3.style.display = "block";
+    }
+    else {
+      image3.style.display = "none";
+      string3.style.display = "none";
+    }
+  }
+  
+</script>
+
+<!-- 
+<p>
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#">Preetika Lakshmanan</a>.
+</p>
+-->
