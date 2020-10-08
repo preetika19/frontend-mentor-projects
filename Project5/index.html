@@ -54,56 +54,48 @@
 </html>
 
 <script>
+  function validate(value, image_id, msg_id) {
+    if(!value) {
+      image_id.style.display = "block";
+      msg_id.style.display = "block";
+    }
+    else {
+      image_id.style.display = "none";
+      msg_id.style.display = "none";
+    }
+  }
+
+  function validate_email(value_email, image_id, msg_id) {
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value_email)) {
+      image_id.style.display = "none";
+      msg_id.style.display = "none";
+    }
+    else {
+      image_id.style.display = "block";
+      msg_id.style.display = "block"; 
+    }
+  }
+
   function check () {
     var first_name = document.getElementById("first_name").value;
-    var last_name = document.getElementById("last_name").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-
     var image1 = document.getElementById("error-icon-fn");
     var string1 = document.getElementById('fn');
+    validate(first_name,image1,string1);
 
+    var last_name = document.getElementById("last_name").value;
     var image2 = document.getElementById("error-icon-ln");
     var string2 = document.getElementById('ln');
+    validate(last_name,image2,string2);
 
+    var password = document.getElementById("password").value;
     var image3 = document.getElementById("error-icon-pass");
     var string3 = document.getElementById('pass');
+    validate(password,image3,string3);
 
+    var email = document.getElementById("email").value;
     var image4 = document.getElementById("error-icon-email");
     var string4 = document.getElementById('email-msg');
-
-    if (!first_name ) {
-      image1.style.display = "block";
-      string1.style.display = "block";
-    }
-    else {
-      image1.style.display = "none";
-      string1.style.display = "none";
-    }
-    if (!last_name) {
-      image2.style.display = "block";
-      string2.style.display = "block";
-    }
-    else {
-      image2.style.display = "none";
-      string2.style.display = "none";
-    }
-    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      image4.style.display = "none";
-      string4.style.display = "none";
-    }
-    else {
-      image4.style.display = "block";
-      string4.style.display = "block"; 
-    }
-    if (!password) {
-      image3.style.display = "block";
-      string3.style.display = "block";
-    }
-    else {
-      image3.style.display = "none";
-      string3.style.display = "none";
-    }
+    validate_email(email,image4,string4);
   }
   
 </script>
